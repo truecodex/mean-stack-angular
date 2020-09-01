@@ -1,0 +1,61 @@
+
+<div class="container">
+    <h1>{{title}}</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <div class="form-row">
+                        <label class="col-md-3">Name <span class="error">*</span></label>
+                        <div class="col-md-9">
+                            <input formControlName="name" class="form-control" />
+                            <small class="error" *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)">
+                                <div *ngIf="f.name.hasError('required')">This field is required.</div>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <label class="col-md-3">SKU</label>
+                        <div class="col-md-9">
+                            <input formControlName="sku" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <label class="col-md-3">Price <span class="error">*</span></label>
+                        <div class="col-md-9">
+                            <input formControlName="price" class="form-control" />
+                            <small class="error" *ngIf="f.price.invalid && (f.price.dirty || f.price.touched)">
+                                <div *ngIf="f.price.hasError('required')">This field is required.</div>
+                                <div *ngIf="f.price.hasError('pattern')">Only number and decimal is allowed.</div>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <label class="col-md-3">Is Enabled</label>
+                        <div class="col-md-9">
+                            <input type="radio" formControlName="is_active" [value]=1 /> Enabled
+                            <input type="radio" formControlName="is_active" [value]=0 /> Disabled
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-9">
+                            <button class="btn btn-success mr-2" [disabled]="!productForm.valid">Save</button>
+                            <button class="btn btn-danger" (click)="goBack()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- {{productForm.value | json}} -->
+        </div>
+    </div>
+</div>

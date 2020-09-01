@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div
+                class="droparea"
+                (dragover)="onDragOver($event)"
+                (dragleave)="onDragLeave($event)"
+                (drop)="onDrop($event)"
+                [class.active]="isActive"
+            >
+                <input type="file" name="userfiles" class="browse-file" (change)="onSelectedFile($event)" multiple>
+                <h4>Choose files or <br /> Drag and drop files here</h4>
+            </div>
+            <div class="mt-2" *ngIf="upload.progress > 0 && upload.progress != 100">
+                <div class="progress" style="height: 20px;margin-bottom:20px;">
+                  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" [style.width.%]="upload.progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{upload.progress}}%</div>
+                </div>
+            </div>
+            <div class="card mt-3 file-list" *ngIf="upload.files">
+                <div class="card-header">File List</div>
+                <ul class="list-group list-group-flush">
+                    <ng-container *ngFor="let item of upload.files">
+                        <li class="list-group-item">{{item.filename}} - Status: <span>Upload complete</span></li>
+                    </ng-container>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

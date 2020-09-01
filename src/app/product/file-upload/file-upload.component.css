@@ -1,0 +1,7 @@
+
+.droparea { border: 2px dashed #ccc; height: 250px;text-align: center; position: relative; background-color: #f7f7f7;}
+.browse-file { width: 100%; height: 100%; opacity: 0; cursor: pointer; position: absolute; left:0; top:0;}
+.droparea h4 { margin-top:80px;}
+.droparea.active { border: 2px dashed #82e318; background-color: #def1cc;}
+.file-list .list-group-item, .file-list .card-header { padding:0.5rem 1.25rem;}
+.file-list span { color: #82e318 }

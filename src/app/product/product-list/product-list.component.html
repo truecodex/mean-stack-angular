@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="col-md-4 text-right">
+            <a routerLink="/backend/product/create" class="btn btn-success btn-sm">Add product</a>
+        </div>
+    </div>
+    <hr />
+    <div class="table-responsive">
+        <table class="table table-stripped table-bordered">
+            <tr class="thead-dark">
+                <th>ID#</th>
+                <th>Name</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>Is Enabled</th>
+                <th>Action</th>
+            </tr>
+            <ng-container *ngFor="let row of rows | paginate: {itemsPerPage: limit, currentPage: p, totalItems: total}">
+                <tr>
+                    <td>{{row.id}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.sku}}</td>
+                    <td>{{row.price}}</td>
+                    <td>
+                        <span *ngIf="row.is_active" class="badge badge-success">Enabled</span>
+                        <span *ngIf="!row.is_active" class="badge badge-danger">Disabled</span>
+                    </td>
+                    <td>
+                        <a [routerLink]="['/backend/product/edit', row.id]" class="btn btn-sm btn-info mr-2">Edit</a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-danger" (click)="deleteProduct(row.id)">Delete</a>
+                    </td>
+                </tr>
+            </ng-container>
+            <tr *ngIf="rows.length == 0">
+                <td colspan="6" class="text-center">No records.</td>
+            </tr>
+        </table>
+    </div>
+    <div class="pagination pagination-sm m-0 float-right">
+        <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
+    </div>
+</div>
