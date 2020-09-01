@@ -5,6 +5,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Installing Dependency Module
 Run `npm install`
 
+## Angular MEAN Application
+Download Angular MEAN application via [mean-stack-angular](https://github.com/truecodex/mean-stack-nodejs).
+
+## Video Tutorial
+MEAN Stack video tutorial available on YouTube [MEAN Stack](https://www.youtube.com/watch?v=zpCKT8nGnds&list=PLgOUQYMnO_SSTYLh5LfrihQOETgkepliJ)
+
+Also documentation available on [truecodex](https://www.truecodex.com/course/mean-mysql-expressjs-angular-nodejs)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
