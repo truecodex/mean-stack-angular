@@ -1,0 +1,1 @@
+Use assets folder for other files like as images etc.
