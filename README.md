@@ -9,7 +9,7 @@ Run `npm install`
 Download Angular MEAN application via [mean-stack-nodejs](https://github.com/truecodex/mean-stack-nodejs).
 
 ## Video Tutorial
-MEAN Stack video tutorial available on YouTube [MEAN Stack](https://www.youtube.com/watch?v=zpCKT8nGnds&list=PLgOUQYMnO_SSTYLh5LfrihQOETgkepliJ)
+MEAN Stack video tutorial available on YouTube [MEAN Stack](https://www.youtube.com/watch?v=zpCKT8nGnds&list=PLgOUQYMnO_STL4dsvG8gfZ88QIFEB4c1w)
 
 Also documentation available on [truecodex](https://www.truecodex.com/course/mean-mysql-expressjs-angular-nodejs)
 
